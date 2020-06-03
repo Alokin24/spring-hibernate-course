@@ -1,18 +1,35 @@
 package springdemo.coaches;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import springdemo.fortunes.FortuneService;
 
 @Component
+@Scope("singleton")
 public class TennisCoach implements Coach {
 
   private FortuneService fortuneService;
    
   public TennisCoach() {
     // TODO Auto-generated constructor stub
+  }
+  
+  // init-method
+  @PostConstruct
+  public void buildStuff() {
+    System.out.println("Creating stuff...");
+  }
+  
+  // destroy-method
+  @PreDestroy
+  public void destroyStuff() {
+    System.out.println("Destroying stuff...");
   }
   
 //  @Autowired 
