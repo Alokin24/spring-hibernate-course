@@ -14,17 +14,11 @@
       class="com.springdemo.fortunes.HappyFortuneService">
     </bean>
     
-    <bean id="bbCoach"
-      class="com.springdemo.coaches.BaseballCoach"
-      scope="prototype">
-      
-      <property name="fortuneService" ref="myFortuneService"/>
-        
-    </bean>
     
     <bean id="myCoach" 
       class="com.springdemo.coaches.TrackCoach" 
-      scope="prototype">
+      init-method="doMyStartupStuff"
+      destroy-method="doMyCleanupStuff">
       
       <constructor-arg ref="myFortuneService"/>
     </bean>

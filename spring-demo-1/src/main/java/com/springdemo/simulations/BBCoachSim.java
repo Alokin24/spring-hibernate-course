@@ -2,25 +2,26 @@ package com.springdemo.simulations;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.springdemo.coaches.BasketballCoach;
 import com.springdemo.coaches.Coach;
 
 public class BBCoachSim {
 
   public static void main(String[] args) {
-    // TODO Auto-generated method stub
     
-    // load configuration
-    ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+    // load context from config
+    ClassPathXmlApplicationContext context = 
+        new ClassPathXmlApplicationContext("beanScope-applicationContext.xml");
     
     // load bean
-    Coach theCoach = applicationContext.getBean(BasketballCoach.class, Coach.class);
+    Coach coach = context.getBean("bbCoach", Coach.class);
+    Coach coach2 = context.getBean("bbCoach", Coach.class);
     
-    // call bean method
-    System.out.println(theCoach.getDailyWorkout());
+    //  test if the are the same bean
+    System.out.println( (coach == coach2) );
     
-    // close config
-    applicationContext.close();
+    // test bean methods
+    System.out.println(coach.getDailyWorkout());
+    System.out.println(coach.tellFortune());
   }
 
 }
