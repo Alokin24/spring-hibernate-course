@@ -19,7 +19,7 @@ public class CricketCoachSim {
     CricketCoach theCoach = applicationContext.getBean(CricketCoach.class, CricketCoach.class);
     
     
-    // run methods
+    // run methods    
     System.out.println(theCoach.getDailyWorkout());
     System.out.println(theCoach.tellFortune());
     System.out.println(theCoach.getEmailAdress());
