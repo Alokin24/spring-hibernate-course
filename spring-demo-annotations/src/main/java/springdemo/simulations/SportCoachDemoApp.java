@@ -2,26 +2,22 @@ package springdemo.simulations;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import springdemo.coaches.Coach;
+import springdemo.coaches.SportCoach;
 
-public class ApplicationDemoApp {
-
+public class SportCoachDemoApp {
   public static void main(String[] args) {
     
-    // read spring config
+    // create context from config
     ClassPathXmlApplicationContext context = 
         new ClassPathXmlApplicationContext("applicationContext.xml");
     
-    // get the bean from spring container
-    Coach myCoach = context.getBean("tennisCoach", Coach.class);
+    // get a bean from context
+    SportCoach sportCoach = context.getBean("sportCoach", SportCoach.class);
     
     // call bean methods
-    System.out.println(myCoach.getDailyWorkout());
-    System.out.println(myCoach.tellFortune());
+    System.out.println(sportCoach.tellMeEverything());
     
-    // close the context
+    // close context
     context.close();
-    
   }
-
 }

@@ -11,4 +11,10 @@ public class ChefCoach implements Coach {
     return "Cook the house";
   }
 
+  @Override
+  public String tellFortune() {
+    // TODO Auto-generated method stub
+    return null;
+  }
+
 }
