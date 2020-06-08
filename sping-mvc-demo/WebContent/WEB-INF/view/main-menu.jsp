@@ -19,6 +19,7 @@
 
 <br><br>
 
+<a href="student/showForm">Student Form</a>
 
 <br><br>
 
