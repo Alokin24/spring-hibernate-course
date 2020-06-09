@@ -17,5 +17,9 @@
   
   Country: ${student.country}
   
+  <br>
+  
+  Language: ${student.favouriteLanguage}
+  
 </body>
 </html>

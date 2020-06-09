@@ -28,6 +28,12 @@
     
     <br><br>
     
+    Java <form:radiobutton path="favouriteLanguage" value="Java" />
+    PHP  <form:radiobutton path="favouriteLanguage" value="PHP" />
+    Paskal <form:radiobutton path="favouriteLanguage" value="Paskal" />
+    C++ <form:radiobutton path="favouriteLanguage" value="C++ "/>
+    
+    <br><br>
     <input type="submit" value="Submit" />
   
   </form:form>
