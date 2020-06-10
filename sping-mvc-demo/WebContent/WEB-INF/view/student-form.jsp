@@ -28,10 +28,7 @@
     
     <br><br>
     
-    Java <form:radiobutton path="favouriteLanguage" value="Java" />
-    PHP  <form:radiobutton path="favouriteLanguage" value="PHP" />
-    Paskal <form:radiobutton path="favouriteLanguage" value="Paskal" />
-    C++ <form:radiobutton path="favouriteLanguage" value="C++ "/>
+     <form:radiobuttons path="favoriteLanguage" items="${student.languageOptions}"  />
     
     <br><br>
     <input type="submit" value="Submit" />
