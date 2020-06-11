@@ -1,4 +1,4 @@
-package com.jdbc.hibernate.demo;
+package com.jdbc.hibernate.demo.student;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -10,7 +10,7 @@ public class UpdateStudentDemo {
 
   public static void main(String[] args) {
     // TODO Auto-generated method stub
-    SessionFactory factory = new Configuration().configure("hibernate.cfg.xml")
+    SessionFactory factory = new Configuration().configure("hibernate.student.cfg.xml")
         .addAnnotatedClass(Student.class)
         .buildSessionFactory();
     

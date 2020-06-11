@@ -1,4 +1,4 @@
-package com.jdbc.hibernate.demo;
+package com.jdbc.hibernate.demo.student;
 
 import org.hibernate.cfg.Configuration;
 
@@ -9,14 +9,14 @@ import org.hibernate.SessionFactory;
 
 
 
-public class ReadStudentDemo {
+public class CreateStudentDemo {
 
   public static void main(String[] args) {
     
     // create session factory
     SessionFactory factory = 
         new Configuration()
-        .configure("hibernate.cfg.xml")
+        .configure("hibernate.student.cfg.xml")
         .addAnnotatedClass(Student.class)
         .buildSessionFactory();
     
@@ -26,7 +26,7 @@ public class ReadStudentDemo {
     try {
       
       // create a student object
-      Student student = new Student("Daff", "Duck", "A123@gmail.com");
+      Student student = new Student("Dunkin", "Donald", "A123@gmail.com");
       
       System.out.println(student);
       
@@ -37,17 +37,6 @@ public class ReadStudentDemo {
       session.save(student);
       
       // commit the transaction
-      session.getTransaction().commit();
-      
-      // start a new session
-      session = factory.getCurrentSession();
-      session.beginTransaction();
-      
-      // get the Student
-      Student redStudent = session.get(Student.class, student.getId());
-      
-      System.out.println(redStudent);
-      
       session.getTransaction().commit();
       
     } finally {

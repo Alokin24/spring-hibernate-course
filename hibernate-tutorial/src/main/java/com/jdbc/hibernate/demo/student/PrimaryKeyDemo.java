@@ -1,4 +1,4 @@
-package com.jdbc.hibernate.demo;
+package com.jdbc.hibernate.demo.student;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -14,7 +14,7 @@ public class PrimaryKeyDemo {
     // create session factory
     SessionFactory factory = 
         new Configuration()
-        .configure("hibernate.cfg.xml")
+        .configure("hibernate.student.cfg.xml")
         .addAnnotatedClass(Student.class)
         .buildSessionFactory();
     
